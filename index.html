@@ -12,6 +12,29 @@
         .hero-gradient {
             background: linear-gradient(135deg, #0f172a, #5b21b6);
         }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Service block hover animation */
+        .service-hover:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
         /* Button hover effect */
         .btn:hover {
             background-color: #22d3ee;
@@ -32,46 +55,59 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with fade-in animation -->
     <section class="hero-gradient h-screen flex items-center justify-center text-center px-4">
-        <div>
+        <div class="fade-in">
             <h1 class="text-5xl md:text-7xl font-bold mb-6">Reimagine — Reengineer — Reinvent</h1>
             <p class="text-xl md:text-2xl mb-8">Building the Future of Networking</p>
             <a href="#contact" class="btn bg-teal-500 text-black px-8 py-3 rounded-full transition-all duration-300">Talk to Us</a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- New Section: Intro Text with fade-in animation -->
+    <section class="py-16 bg-gray-900 text-center px-4 fade-in">
+        <div class="container mx-auto">
+            <p class="text-lg md:text-xl mb-6">
+                A boutique consulting service that helps you navigate the tricky interplay between on-prem and cloud infrastructure, networks that span public and private spaces, and workloads that have to be highly available and immediately scalable.
+            </p>
+            <p class="text-lg md:text-xl mb-6">
+                We offer strategy, design and execution services rooted in a simple thought: no network is static — it is an organism that must grow along with the organization it serves. A network must enable, empower, and evolve seamlessly.
+            </p>
+            <p class="text-xl font-bold">We are network re-engineers.</p>
+        </div>
+    </section>
+
+    <!-- Services Section with hover animation -->
     <section id="services" class="py-20 px-6 bg-gray-900">
         <div class="container mx-auto">
             <h2 class="text-4xl font-bold mb-10 text-center">Our Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Continuous Design -->
-                <div class="bg-gradient-to-r from-teal-500 to-cyan-500 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-gradient-to-r from-teal-500 to-cyan-500 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 service-hover">
                     <h3 class="text-2xl font-bold mb-4">Continuous Design</h3>
                     <p>We analyze and redesign existing networks, focusing on current and future enhancements to eliminate inefficiencies and prepare your network for growth.</p>
                 </div>
 
                 <!-- Antifragile Software Networking -->
-                <div class="bg-gradient-to-r from-purple-600 to-purple-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-gradient-to-r from-purple-600 to-purple-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 service-hover">
                     <h3 class="text-2xl font-bold mb-4">Antifragile Software Networking</h3>
                     <p>Integrate SDN technologies like SD-WAN, SD-Access, and ACI with your existing traditional networks to enhance architecture and enable modern networking technologies.</p>
                 </div>
 
                 <!-- Zero Trust Networking -->
-                <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 service-hover">
                     <h3 class="text-2xl font-bold mb-4">Zero Trust Networking</h3>
                     <p>Provide secure access for work-from-home employees with multi-vendor support for firewalls and VPNs, including FTDs, ASAs, Fortinet, and Palo Alto.</p>
                 </div>
 
                 <!-- Scaling Networks -->
-                <div class="bg-gradient-to-r from-green-500 to-green-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-gradient-to-r from-green-500 to-green-700 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 service-hover">
                     <h3 class="text-2xl font-bold mb-4">Scaling Networks</h3>
                     <p>Helping companies migrate to IPv6 by providing a detailed path from dual-homed to full IPv6 migration, ensuring your network is scalable for the future.</p>
                 </div>
 
                 <!-- Fully Managed Networks -->
-                <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
+                <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 p-8 rounded-lg shadow-lg hover:shadow-2xl transition-transform duration-300 service-hover">
                     <h3 class="text-2xl font-bold mb-4">Fully Managed Networks</h3>
                     <p>We provide a year-round NOC service that ensures maintenance, troubleshooting, and monitoring for your network with centralized status tracking.</p>
                 </div>

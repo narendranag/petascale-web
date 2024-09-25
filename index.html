@@ -5,12 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Petascale Consulting</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/bbdb44df5b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom gradient for the Hero section */
         .hero-gradient {
             background: linear-gradient(135deg, #0f172a, #5b21b6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Icon background */
+        .fa-bg {
+            position: absolute;
+            font-size: 100px;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .icon-1 {
+            top: 20%;
+            left: 10%;
+        }
+
+        .icon-2 {
+            top: 50%;
+            left: 20%;
+        }
+
+        .icon-3 {
+            top: 30%;
+            right: 15%;
+        }
+
+        .icon-4 {
+            top: 70%;
+            right: 10%;
         }
 
         /* Fade-in animation */
@@ -44,7 +73,7 @@
 <body class="bg-gray-900 text-white font-sans">
 
     <!-- Header -->
-    <header class="w-full py-4 px-6 fixed top-0 left-0 bg-opacity-80 bg-gray-800">
+    <header class="w-full py-4 px-6 fixed top-0 left-0 bg-opacity-80 bg-gray-800 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold">Petascale Consulting</div>
             <nav class="space-x-6">
@@ -55,18 +84,27 @@
         </div>
     </header>
 
-    <!-- Hero Section with fade-in animation -->
-    <section class="hero-gradient h-screen flex items-center justify-center text-center px-4">
-        <div class="fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Reimagine — Reengineer — Reinvent</h1>
-            <p class="text-xl md:text-2xl mb-8">Building the Future of Networking</p>
-            <a href="#contact" class="btn bg-teal-500 text-black px-8 py-3 rounded-full transition-all duration-300">Talk to Us</a>
-        </div>
-    </section>
+    <!-- Add top padding to prevent header overlap -->
+    <div class="pt-20">
+        <!-- Hero Section with FontAwesome-based background -->
+        <section class="hero-gradient h-screen flex items-center justify-center text-center px-4">
+            <!-- Background Icons -->
+            <i class="fas fa-network-wired fa-bg icon-1"></i>
+            <i class="fas fa-server fa-bg icon-2"></i>
+            <i class="fas fa-cloud fa-bg icon-3"></i>
+            <i class="fas fa-database fa-bg icon-4"></i>
+
+            <div class="fade-in relative">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">Reimagine — Reengineer — Reinvent</h1>
+                <p class="text-xl md:text-2xl mb-8">Building the Future of Networking</p>
+                <a href="#contact" class="btn bg-teal-500 text-black px-8 py-3 rounded-full transition-all duration-300">Talk to Us</a>
+            </div>
+        </section>
+    </div>
 
     <!-- New Section: Intro Text with fade-in animation -->
     <section class="py-16 bg-gray-900 text-center px-4 fade-in">
-        <div class="container mx-auto">
+        <div class="container mx-auto max-w-2xl">
             <p class="text-lg md:text-xl mb-6">
                 A boutique consulting service that helps you navigate the tricky interplay between on-prem and cloud infrastructure, networks that span public and private spaces, and workloads that have to be highly available and immediately scalable.
             </p>
